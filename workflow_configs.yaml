@@ -1,0 +1,41 @@
+# 工作流配置列表
+workflows:
+  - workflow_name: "data_process_region_a"
+    workflow_description: "区域A数据处理工作流"
+    task_id: "001"
+    dependent_project: "base_project"
+    dependent_workflow: "data_collect"
+    dependent_task: "collect_complete"
+    shell_command: |
+      #!/bin/bash
+      echo "开始处理区域A数据"
+      date
+      # 区域A特定处理逻辑
+      echo "区域A数据处理完成"
+  
+  - workflow_name: "data_process_region_b"
+    workflow_description: "区域B数据处理工作流"
+    task_id: "001"
+    dependent_project: "base_project"
+    dependent_workflow: "data_collect"
+    dependent_task: "collect_complete"
+    shell_command: |
+      #!/bin/bash
+      echo "开始处理区域B数据"
+      date
+      # 区域B特定处理逻辑
+      echo "区域B数据处理完成"
+
+  - workflow_name: "data_process_region_c"
+    workflow_description: "区域C数据处理工作流"
+    task_id: "001"
+    dependent_project: "base_project"
+    dependent_workflow: "data_collect"
+    dependent_task: "collect_complete"
+    shell_command: |
+      #!/bin/bash
+      echo "开始处理区域C数据"
+      date
+      # 区域C特定处理逻辑
+      python3 /path/to/process_script.py --region C
+      echo "区域C数据处理完成" 
