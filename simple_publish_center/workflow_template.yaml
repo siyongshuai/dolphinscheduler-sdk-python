@@ -1,0 +1,20 @@
+# 工作流模板 - 将被批量替换参数生成多个工作流
+workflow:
+  name: "${workflow_name}"
+  description: "${workflow_description}"
+  release_state: "online"
+  
+tasks:
+  - name: "dependent_${task_id}"
+    task_type: Dependent
+    dependent_parameters:
+      - project_name: "${dependent_project}"
+        workflow_name: "${dependent_workflow}"
+        dependent_mode: "task_dependent"
+        dependent_task_name: "${dependent_task}"
+        dependent_result: "success"
+        
+  - name: "shell_${task_id}"
+    task_type: Shell
+    deps: ["dependent_${task_id}"]
+    command: "${shell_command}" 
