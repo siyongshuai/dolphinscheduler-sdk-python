@@ -9,6 +9,15 @@
 - **workflow_configs.yaml** - 工作流配置文件，包含多个工作流的参数
 - **yaml_batch_workflow.md** - 详细的方案说明文档
 
+## 文档指南
+
+- [用户指南](user_guide.md) - 详细的使用说明和最佳实践
+- [开发指南](development_guide.md) - 开发和扩展指导
+- [项目设计](project_design.md) - 项目架构和设计说明
+- [变更日志](changelog.md) - 版本更新记录
+- [问题记录](issue.md) - 已知问题和限制
+- [Bug修复记录](bugfix.md) - Bug修复历史
+
 ## 使用方法
 
 1. 确保已安装PyDolphinScheduler
